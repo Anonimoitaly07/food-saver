@@ -1,0 +1,103 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 39 33% 95%; /* light-beige */
+    --foreground: 210 11% 45%; /* neutral-gray */
+
+    --card: 0 0% 100%;
+    --card-foreground: 141 18% 28%; /* dark-green */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 141 18% 28%; /* dark-green */
+
+    --primary: 141 18% 28%; /* dark-green */
+    --primary-foreground: 39 33% 95%; /* light-beige */
+
+    --secondary: 95 15% 62%; /* sage */
+    --secondary-foreground: 141 18% 28%; /* dark-green */
+
+    --muted: 95 15% 92%; /* light sage */
+    --muted-foreground: 210 11% 65%; /* lighter neutral-gray */
+
+    --accent: 36 76% 66%; /* pastel-orange */
+    --accent-foreground: 141 18% 28%; /* dark-green */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 95 15% 82%; /* sage border */
+    --input: 95 15% 82%; /* sage input */
+    --ring: 141 18% 28%; /* dark-green */
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 141 18% 28%; /* dark-green */
+    --sidebar-foreground: 39 33% 95%; /* light-beige */
+    --sidebar-primary: 95 15% 62%; /* sage */
+    --sidebar-primary-foreground: 141 18% 28%; /* dark-green */
+    --sidebar-accent: 36 76% 66%; /* pastel-orange */
+    --sidebar-accent-foreground: 141 18% 28%; /* dark-green */
+    --sidebar-border: 141 18% 38%; /* slightly lighter dark-green */
+    --sidebar-ring: 95 15% 62%; /* sage */
+  }
+
+  .dark {
+    /* We'll keep dark mode settings even though we won't implement a switcher */
+    --background: 141 18% 15%; /* darker dark-green */
+    --foreground: 39 33% 95%; /* light-beige */
+
+    --card: 141 18% 20%; /* slightly lighter dark-green */
+    --card-foreground: 39 33% 95%; /* light-beige */
+
+    --popover: 141 18% 20%; /* slightly lighter dark-green */
+    --popover-foreground: 39 33% 95%; /* light-beige */
+
+    --primary: 95 15% 62%; /* sage */
+    --primary-foreground: 141 18% 28%; /* dark-green */
+
+    --secondary: 141 18% 28%; /* dark-green */
+    --secondary-foreground: 39 33% 95%; /* light-beige */
+
+    --muted: 141 18% 25%; /* slightly muted dark-green */
+    --muted-foreground: 39 33% 85%; /* slightly muted light-beige */
+
+    --accent: 36 76% 66%; /* pastel-orange */
+    --accent-foreground: 141 18% 28%; /* dark-green */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 39 33% 95%; /* light-beige */
+
+    --border: 141 18% 35%;
+    --input: 141 18% 35%;
+    --ring: 95 15% 62%; /* sage */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-light-beige text-neutral-gray;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-dark-green font-semibold;
+  }
+}
+
+@layer components {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .card-shadow {
+    @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+}
